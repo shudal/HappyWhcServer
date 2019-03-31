@@ -42,6 +42,7 @@ class Index extends Base {
         $score = [];
         $score['score'] = $data['score'];
         $score['user_id'] = $user->id;
+	$score['create_time'] = strtotime("now");
         model('Score')->save($score);
 
         $result['code'] = 1;
